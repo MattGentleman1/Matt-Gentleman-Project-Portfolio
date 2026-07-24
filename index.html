@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matt — Mechanical Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TITLE BLOCK / HEADER -->
+  <header class="titleblock">
+    <div class="titleblock__left">
+      <span class="titleblock__label">DRAWING NO.</span>
+      <span class="titleblock__value">MJ-001</span>
+    </div>
+    <nav class="titleblock__nav">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" class="titleblock__resume">Resume ↓</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__grid"></div>
+    <p class="hero__eyebrow">MECHANICAL ENGINEERING — CO-OP</p>
+    <h1 class="hero__name">Matt<span class="hero__surname">.</span></h1>
+    <p class="hero__tagline">
+      I build the things that don't fit on a screen — camera rigs for a cubesat,
+      armor for a battlebot, molds for carbon fiber parts. This page is the
+      shop floor, not the brochure.
+    </p>
+    <div class="hero__coords">
+      <span>HALIFAX, NS</span>
+      <span>SCALE 1:1</span>
+      <span>REV. 2026.07</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section__heading"><span class="section__tag">SHEET 01</span>Selected Work</h2>
+
+    <div class="cards">
+
+      <!-- Project 1 -->
+      <article class="card">
+        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&q=80');"></div>
+        <div class="card__spec">
+          <span>PART NO. CAM-01</span>
+          <span>STATUS: ACTIVE</span>
+        </div>
+        <h3 class="card__title">Cubesat Camera System</h3>
+        <p class="card__desc">
+          Integrated LUCID Vision GigE cameras with Edmund Optics lenses for a
+          satellite optical payload, working alongside a mission director and
+          software team.
+        </p>
+        <ul class="card__bullets">
+          <li>Set lenses to infinity focus and validated image quality end to end</li>
+          <li>Diagnosed and resolved GigE connectivity issues across the imaging chain</li>
+          <li>Sourced and specified space-grade adhesives for connector staking to NASA-STD-8739.1</li>
+        </ul>
+        <div class="card__tools">
+          <span>Arena SDK</span><span>GigE Vision</span><span>Optical Alignment</span>
+        </div>
+        <a href="#" class="card__link">View writeup →</a>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80');"></div>
+        <div class="card__spec">
+          <span>PART NO. MLD-02</span>
+          <span>STATUS: IN PROGRESS</span>
+        </div>
+        <h3 class="card__title">Carbon Fiber Layup Mold</h3>
+        <p class="card__desc">
+          Designed a two-piece mold (LidV2) for a carbon fiber lid component,
+          balancing part release, surface finish, and layup access.
+        </p>
+        <ul class="card__bullets">
+          <li>Modeled draft angles and fillet transitions to ease de-molding</li>
+          <li>Built a parallel workflow using SolidWorks' Insert → Mold → Cavity tool</li>
+          <li>Iterated pocket geometry for a clean carbon fiber surface finish</li>
+        </ul>
+        <div class="card__tools">
+          <span>SolidWorks</span><span>Mold Design</span><span>Composites</span>
+        </div>
+        <a href="#" class="card__link">View writeup →</a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80');"></div>
+        <div class="card__spec">
+          <span>PART NO. BOT-03</span>
+          <span>STATUS: COMPLETE</span>
+        </div>
+        <h3 class="card__title">Battlebot Armor & Drivetrain</h3>
+        <p class="card__desc">
+          Contributed to a student battlebot team, from front armor material
+          selection to motor control for the drivetrain.
+        </p>
+        <ul class="card__bullets">
+          <li>Evaluated titanium vs. aluminum armor, specifying 3mm bent aluminum for weight and cost</li>
+          <li>Sourced local fabrication partners for sheet metal bending</li>
+          <li>Applied motor driver knowledge (L298N, brushed DC motors) to drivetrain control</li>
+        </ul>
+        <div class="card__tools">
+          <span>Materials Selection</span><span>Fabrication</span><span>Motor Control</span>
+        </div>
+        <a href="#" class="card__link">View writeup →</a>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card">
+        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&q=80');"></div>
+        <div class="card__spec">
+          <span>PART NO. ARD-04</span>
+          <span>STATUS: ONGOING</span>
+        </div>
+        <h3 class="card__title">Arduino Motor Control Bench</h3>
+        <p class="card__desc">
+          Self-directed electronics build-up, working through motor drivers
+          and power delivery as a foundation for an eventual drone build.
+        </p>
+        <ul class="card__bullets">
+          <li>Controlled Type 130 brushed DC motors via L298N drivers with PWM</li>
+          <li>Compared power strategies: 9V batteries, barrel jacks, bench supplies</li>
+          <li>Documented findings for reuse on future robotics builds</li>
+        </ul>
+        <div class="card__tools">
+          <span>Arduino</span><span>PWM</span><span>Power Systems</span>
+        </div>
+        <a href="#" class="card__link">View writeup →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS AS PARTS LIST -->
+  <section id="skills" class="section">
+    <h2 class="section__heading"><span class="section__tag">SHEET 02</span>Parts List</h2>
+
+    <table class="partslist">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CAD &amp; Design</td>
+          <td>SolidWorks, mold &amp; cavity design, GD&amp;T fundamentals</td>
+        </tr>
+        <tr>
+          <td>Electronics</td>
+          <td>Arduino, L298N motor drivers, PWM control, circuit power design</td>
+        </tr>
+        <tr>
+          <td>Manufacturing</td>
+          <td>3D printing (FDM), carbon fiber layup, sheet metal fabrication</td>
+        </tr>
+        <tr>
+          <td>Analysis &amp; Reporting</td>
+          <td>Thermodynamics, technical memos, system sizing verification (CSA B149.1)</td>
+        </tr>
+        <tr>
+          <td>Systems</td>
+          <td>GigE Vision cameras, optical alignment, connector staking (NASA-STD-8739.1)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTACT / STAMP -->
+  <footer id="contact" class="stamp">
+    <div class="stamp__box">
+      <p class="stamp__line">APPROVED FOR REVIEW</p>
+      <h2 class="stamp__name">Matt</h2>
+      <div class="stamp__links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <a href="resume.pdf">Resume ↓</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
