@@ -1,198 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-tone="formal">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matt — Mechanical Engineering Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matt Gentleman — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Matt Gentleman — design, 3D printing, and mechanical projects.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TITLE BLOCK / HEADER -->
-  <header class="titleblock">
-    <div class="titleblock__left">
-      <span class="titleblock__label">DRAWING NO.</span>
-      <span class="titleblock__value">MJ-001</span>
-    </div>
-    <nav class="titleblock__nav">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <a href="resume.pdf" class="titleblock__resume">Resume ↓</a>
+  <header class="nav">
+    <a class="nav-name" href="#top">MG<span class="cursor">_</span></a>
+    <nav class="nav-links">
+      <a href="#projects">01 / Projects</a>
+      <a href="#coming-soon">02 / Co-op</a>
+      <a href="#contact">03 / Contact</a>
     </nav>
+    <div class="tone-toggle" role="group" aria-label="Tone of voice">
+      <button type="button" class="tone-btn" data-set-tone="formal" aria-pressed="true">FORMAL</button>
+      <button type="button" class="tone-btn" data-set-tone="informal" aria-pressed="false">CASUAL</button>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__grid"></div>
-    <p class="hero__eyebrow">MECHANICAL ENGINEERING — CO-OP</p>
-    <h1 class="hero__name">Matt<span class="hero__surname">.</span></h1>
-    <p class="hero__tagline">
-      I build the things that don't fit on a screen — camera rigs for a cubesat,
-      armor for a battlebot, molds for carbon fiber parts. This page is the
-      shop floor, not the brochure.
-    </p>
-    <div class="hero__coords">
-      <span>HALIFAX, NS</span>
-      <span>SCALE 1:1</span>
-      <span>REV. 2026.07</span>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2 class="section__heading"><span class="section__tag">SHEET 01</span>Selected Work</h2>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="hero-meta">// ENGINEERING PORTFOLIO — REV 2026.07</p>
+      <h1>MATT<br>GENTLEMAN</h1>
+      <p class="hero-sub formal">
+        Engineering student focused on mechanical design, rapid prototyping, and building
+        hardware that works — from flywheel-driven vehicles to astrophotography rigs.
+      </p>
+      <p class="hero-sub informal">
+        Engineering student. I design things, print things, gear things up, and occasionally
+        launch things. Flip the toggle above to change how this whole page talks to you —
+        every drawing set deserves a revision history.
+      </p>
+      <a class="hero-cta" href="#projects">[ VIEW PROJECTS ]</a>
+    </section>
 
-    <div class="cards">
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <h2 class="section-title"><span class="sec-num">01</span> Personal Projects</h2>
 
-      <!-- Project 1 -->
-      <article class="card">
-        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&q=80');"></div>
-        <div class="card__spec">
-          <span>PART NO. CAM-01</span>
-          <span>STATUS: ACTIVE</span>
+      <!-- ---- Flywheel Car ---- -->
+      <article class="project reveal">
+        <header class="project-head">
+          <span class="drawing-no">PRJ-001</span>
+          <h3>FLYWHEEL CAR</h3>
+          <span class="project-tags">MECHANICAL DESIGN / GEAR TRAINS / ENERGY STORAGE</span>
+        </header>
+        <div class="project-grid2">
+          <div class="project-media">
+            <!-- Replace with: <img src="images/flywheel-car.jpg" alt="Flywheel car"> -->
+            <div class="img-placeholder">FIG. 1 — IMAGE PENDING</div>
+          </div>
+          <div class="project-body">
+            <div class="formal">
+              <p>
+                A design-class competition asked teams to build a gravity-propelled car that would
+                <em>lose</em> a race down a track — finish as slowly as possible while still
+                reliably crossing the line, with no timing devices or embedded controllers allowed.
+              </p>
+              <p>
+                Since the car's total energy was fixed by its starting height, the strategy was to
+                store energy rather than dissipate it: shifting translational kinetic energy into
+                rotational kinetic energy held in high-inertia rotating bodies. Moment of inertia
+                was straightforward to maximize with large, disk-like wheels, but angular velocity —
+                the dominant term, entering as its square — is normally locked to the car's speed.
+                The solution was a gear train driving a high-inertia flywheel at a large multiple of
+                wheel speed, letting the car bank energy like a battery and creep down the track
+                without ever risking a full stop.
+              </p>
+            </div>
+            <div class="informal">
+              <p>
+                Great competition premise: build a gravity-powered car that <em>loses</em> the race.
+                Slowest car down the track wins — but it still has to cross the finish line. No
+                timers, no microcontrollers, no cheating.
+              </p>
+              <p>
+                My thinking: the energy budget is locked in the moment the car sits at the top of
+                the ramp, so instead of burning energy off with friction (risky — stop completely
+                and you're out), why not stash it somewhere? Enter the flywheel. Angular kinetic
+                energy scales with the <em>square</em> of spin speed, so I geared up a big chunky
+                disk to spin far faster than the wheels. The car siphons its own speed into a
+                spinning battery and crawls across the line at a glacial, victorious pace.
+              </p>
+            </div>
+          </div>
         </div>
-        <h3 class="card__title">Cubesat Camera System</h3>
-        <p class="card__desc">
-          Integrated LUCID Vision GigE cameras with Edmund Optics lenses for a
-          satellite optical payload, working alongside a mission director and
-          software team.
-        </p>
-        <ul class="card__bullets">
-          <li>Set lenses to infinity focus and validated image quality end to end</li>
-          <li>Diagnosed and resolved GigE connectivity issues across the imaging chain</li>
-          <li>Sourced and specified space-grade adhesives for connector staking to NASA-STD-8739.1</li>
-        </ul>
-        <div class="card__tools">
-          <span>Arena SDK</span><span>GigE Vision</span><span>Optical Alignment</span>
-        </div>
-        <a href="#" class="card__link">View writeup →</a>
       </article>
 
-      <!-- Project 2 -->
-      <article class="card">
-        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80');"></div>
-        <div class="card__spec">
-          <span>PART NO. MLD-02</span>
-          <span>STATUS: IN PROGRESS</span>
+      <!-- ---- Telescope Mount ---- -->
+      <article class="project reveal">
+        <header class="project-head">
+          <span class="drawing-no">PRJ-002</span>
+          <h3>TELESCOPE PHONE MOUNT</h3>
+          <span class="project-tags">3D PRINTING / CAD / ASTROPHOTOGRAPHY</span>
+        </header>
+        <div class="project-grid2">
+          <div class="project-media">
+            <!-- Replace with: <img src="images/telescope-mount.jpg" alt="3D printed telescope phone mount"> -->
+            <div class="img-placeholder">FIG. 2 — IMAGE PENDING</div>
+          </div>
+          <div class="project-body">
+            <div class="formal">
+              <p>
+                A 3D-printed smartphone mount for a telescope, designed to enable long-exposure
+                astrophotography. As my first real project on an Ender 3, tolerancing was learned
+                hands-on: accounting for print shrinkage with a series of small test rigs before
+                committing to full prints, with a 30&nbsp;cm steel ruler as the only measuring
+                instrument available.
+              </p>
+              <p>
+                A later revision added a sliding-plate mechanism so the phone could translate with
+                the telescope's aperture as it extended and retracted for focusing. The finished
+                mount produced clean mosaics of the night sky. Long exposures revealed star trails
+                from Earth's rotation — roughly 15 arcminutes of drift over a 60-second exposure,
+                about half the apparent width of the full Moon — which defined the obvious next
+                step: a motorized tracking mount, shelved at the time for budget reasons.
+              </p>
+            </div>
+            <div class="informal">
+              <p>
+                I'm a complete astronomy nerd, and when my uncle's telescope landed in my hands I
+                immediately wanted to photograph everything — partly because my eyesight is bad
+                enough that the camera genuinely sees the sky better than I do. First thing I ever
+                made on my Ender 3, so every lesson arrived the fun way: shrinkage, tolerances, and
+                the hard limits of measuring things with a 30&nbsp;cm ruler. Many tiny test prints
+                died so the final part could live.
+              </p>
+              <p>
+                By the time I designed the phone cradle I'd leveled up enough that it fit perfectly
+                on the first try (it helps that phone dimensions are public information). Version
+                one had a fatal flaw — no way to slide the phone as the telescope focused — so
+                version two got a very satisfying sliding plate. The mosaics were beautiful, except
+                every star had a tail: Earth's rotation drags them about 15 arcminutes across a
+                60-second exposure, half a full Moon's width. The fix is a motorized tracking mount,
+                which was slightly outside the budget of a guy who'd just spent it all on a 3D
+                printer.
+              </p>
+            </div>
+          </div>
         </div>
-        <h3 class="card__title">Carbon Fiber Layup Mold</h3>
-        <p class="card__desc">
-          Designed a two-piece mold (LidV2) for a carbon fiber lid component,
-          balancing part release, surface finish, and layup access.
-        </p>
-        <ul class="card__bullets">
-          <li>Modeled draft angles and fillet transitions to ease de-molding</li>
-          <li>Built a parallel workflow using SolidWorks' Insert → Mold → Cavity tool</li>
-          <li>Iterated pocket geometry for a clean carbon fiber surface finish</li>
-        </ul>
-        <div class="card__tools">
-          <span>SolidWorks</span><span>Mold Design</span><span>Composites</span>
-        </div>
-        <a href="#" class="card__link">View writeup →</a>
       </article>
 
-      <!-- Project 3 -->
-      <article class="card">
-        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80');"></div>
-        <div class="card__spec">
-          <span>PART NO. BOT-03</span>
-          <span>STATUS: COMPLETE</span>
-        </div>
-        <h3 class="card__title">Battlebot Armor & Drivetrain</h3>
-        <p class="card__desc">
-          Contributed to a student battlebot team, from front armor material
-          selection to motor control for the drivetrain.
-        </p>
-        <ul class="card__bullets">
-          <li>Evaluated titanium vs. aluminum armor, specifying 3mm bent aluminum for weight and cost</li>
-          <li>Sourced local fabrication partners for sheet metal bending</li>
-          <li>Applied motor driver knowledge (L298N, brushed DC motors) to drivetrain control</li>
-        </ul>
-        <div class="card__tools">
-          <span>Materials Selection</span><span>Fabrication</span><span>Motor Control</span>
-        </div>
-        <a href="#" class="card__link">View writeup →</a>
-      </article>
+      <!-- ---- Placeholder projects. PLACEHOLDER COPY — replace with real write-ups. ---- -->
+      <div class="mini-grid">
 
-      <!-- Project 4 -->
-      <article class="card">
-        <div class="card__image" style="background-image:url('https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&q=80');"></div>
-        <div class="card__spec">
-          <span>PART NO. ARD-04</span>
-          <span>STATUS: ONGOING</span>
-        </div>
-        <h3 class="card__title">Arduino Motor Control Bench</h3>
-        <p class="card__desc">
-          Self-directed electronics build-up, working through motor drivers
-          and power delivery as a foundation for an eventual drone build.
-        </p>
-        <ul class="card__bullets">
-          <li>Controlled Type 130 brushed DC motors via L298N drivers with PWM</li>
-          <li>Compared power strategies: 9V batteries, barrel jacks, bench supplies</li>
-          <li>Documented findings for reuse on future robotics builds</li>
-        </ul>
-        <div class="card__tools">
-          <span>Arduino</span><span>PWM</span><span>Power Systems</span>
-        </div>
-        <a href="#" class="card__link">View writeup →</a>
-      </article>
+        <article class="mini-project reveal">
+          <span class="drawing-no">PRJ-003</span>
+          <h3>DRONE</h3>
+          <span class="wip-badge">IN PROGRESS</span>
+          <p class="formal">A custom drone build, currently in progress. Full write-up and photos to follow.</p>
+          <p class="informal">Currently in progress. It already flies beautifully in my head — write-up soon.</p>
+        </article>
 
-    </div>
-  </section>
+        <article class="mini-project reveal">
+          <span class="drawing-no">PRJ-004</span>
+          <h3>SALMON SLIDER</h3>
+          <p class="formal">An original video game project. Write-up in progress.</p>
+          <p class="informal">Yes, it's a video game about a sliding salmon. No, I will not be elaborating until the write-up is done.</p>
+        </article>
 
-  <!-- SKILLS AS PARTS LIST -->
-  <section id="skills" class="section">
-    <h2 class="section__heading"><span class="section__tag">SHEET 02</span>Parts List</h2>
+        <article class="mini-project reveal">
+          <span class="drawing-no">PRJ-005</span>
+          <h3>CLUB TREBUCHET</h3>
+          <p class="formal">A trebuchet designed and built with the engineering club. Details coming soon.</p>
+          <p class="informal">The engineering club built a trebuchet. Objects were launched. Lessons were learned. Details soon.</p>
+        </article>
 
-    <table class="partslist">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Items</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>CAD &amp; Design</td>
-          <td>SolidWorks, mold &amp; cavity design, GD&amp;T fundamentals</td>
-        </tr>
-        <tr>
-          <td>Electronics</td>
-          <td>Arduino, L298N motor drivers, PWM control, circuit power design</td>
-        </tr>
-        <tr>
-          <td>Manufacturing</td>
-          <td>3D printing (FDM), carbon fiber layup, sheet metal fabrication</td>
-        </tr>
-        <tr>
-          <td>Analysis &amp; Reporting</td>
-          <td>Thermodynamics, technical memos, system sizing verification (CSA B149.1)</td>
-        </tr>
-        <tr>
-          <td>Systems</td>
-          <td>GigE Vision cameras, optical alignment, connector staking (NASA-STD-8739.1)</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+        <article class="mini-project reveal">
+          <span class="drawing-no">PRJ-006</span>
+          <h3>COAT HANGER</h3>
+          <p class="formal">A practical design and fabrication project. Write-up coming soon.</p>
+          <p class="informal">Sometimes engineering is just needing somewhere to hang your coat. More soon.</p>
+        </article>
 
-  <!-- CONTACT / STAMP -->
-  <footer id="contact" class="stamp">
-    <div class="stamp__box">
-      <p class="stamp__line">APPROVED FOR REVIEW</p>
-      <h2 class="stamp__name">Matt</h2>
-      <div class="stamp__links">
-        <a href="mailto:you@example.com">Email</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-        <a href="resume.pdf">Resume ↓</a>
       </div>
-    </div>
+    </section>
+
+    <!-- ============ COMING SOON (DSS / DCRT) ============ -->
+    <section id="coming-soon" class="section">
+      <h2 class="section-title"><span class="sec-num">02</span> Professional &amp; Co-op Work</h2>
+      <p class="section-lede formal">Detailed write-ups of my professional work are on the way.</p>
+      <p class="section-lede informal">The serious stuff — currently being written up so it does the work justice.</p>
+      <div class="soon-grid">
+        <div class="soon-card reveal">
+          <h3>DSS</h3>
+          <ul><li>Bandwidth selection</li></ul>
+          <span class="soon-badge">STATUS: PENDING</span>
+        </div>
+        <div class="soon-card reveal">
+          <h3>DCRT</h3>
+          <ul>
+            <li>Shield material change</li>
+            <li>Carbon fiber layup / CNC machining</li>
+          </ul>
+          <span class="soon-badge">STATUS: PENDING</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title"><span class="sec-num">03</span> Contact</h2>
+      <p class="formal">I'm always open to discussing engineering opportunities and interesting problems.</p>
+      <p class="informal">If any of this made you smile (or raise an eyebrow), let's talk.</p>
+      <a class="contact-btn" href="mailto:matthewgentleman58@gmail.com">matthewgentleman58@gmail.com</a>
+      <!-- Add LinkedIn / GitHub links here -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 MATT GENTLEMAN — DRAWN, NOT TRACED.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
