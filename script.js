@@ -1,3 +1,27 @@
+// ---- View switching (Personal Projects / DSS / DCRT) ----
+// Sections stay hidden until a button is clicked; only one shows at a time.
+(function () {
+  const switchers = document.querySelectorAll("button[data-view]");
+  const views = document.querySelectorAll(".view");
+
+  function showView(name) {
+    let target = null;
+    views.forEach(function (view) {
+      const isMatch = view.id === "view-" + name;
+      view.classList.toggle("active", isMatch);
+      if (isMatch) target = view;
+    });
+    document.querySelectorAll(".view-btn").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", String(btn.dataset.view === name));
+    });
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  switchers.forEach(function (btn) {
+    btn.addEventListener("click", function () { showView(btn.dataset.view); });
+  });
+})();
+
 // ---- Tone toggle (Formal / Casual) ----
 // The chosen tone is stored in localStorage so it persists between visits.
 (function () {
