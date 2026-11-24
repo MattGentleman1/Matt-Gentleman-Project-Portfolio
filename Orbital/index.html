@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../salmon-slider/ss.css">
 </head>
 <body>
   <canvas id="bg" class="bg" aria-hidden="true"></canvas>
@@ -225,7 +226,7 @@
       <!-- ---- Placeholder projects. PLACEHOLDER COPY — replace with real write-ups. ---- -->
       <div class="mini-grid">
 
-        <article id="prj-004" class="mini-project reveal">
+        <article id="prj-004" class="mini-project reveal ss-feature">
           <span class="drawing-no">PRJ-004</span>
           <h3>SALMON SLIDER - weird Tetris thing</h3>
           <p class="formal">An original video game project where users play as a Salmon traveling up a treacherous stream
@@ -237,6 +238,49 @@
             there was a score count that would record a highscore, the obstacles would spawn and despawn off screen, and
             would increase in speed logarithmically proportional to the number of communication event.</p>
           <p class="informal">Yes, it's a video game about a sliding salmon. No, I will not be elaborating until the write-up is done.</p>
+          <div class="ss-showcase" data-ss-assets="../salmon-slider/img/">
+            <div class="ss-stage">
+              <div class="ss-cabinet" data-label="SALMON SLIDER · FIG. 4">
+                <span class="ss-live" aria-hidden="true">DEMO</span>
+                <canvas class="ss-canvas" width="300" height="400" tabindex="0" role="img"
+                  aria-label="Animated demo of Salmon Slider: a salmon slides and jumps past rocks, logs and bushes floating down a river. Select it to play with the arrow keys and space bar."></canvas>
+              </div>
+              <div class="ss-controls">
+                <button type="button" class="ss-btn" data-ss-toggle aria-pressed="false">Take control</button>
+                <span class="ss-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> slide &middot; <kbd>Space</kbd> jump</span>
+              </div>
+              <div class="ss-pad" role="group" aria-label="On-screen joystick">
+                <button type="button" data-ss-pad="left" aria-label="Slide left">&#9664;</button>
+                <button type="button" data-ss-pad="jump">JUMP</button>
+                <button type="button" data-ss-pad="right" aria-label="Slide right">&#9654;</button>
+              </div>
+            </div>
+            <div class="ss-side">
+              <img class="ss-logo" src="../salmon-slider/img/logo.webp" alt="Salmon Slider logo" width="480" height="329" loading="lazy" decoding="async">
+              <dl class="ss-specs">
+                <div><dt>BUILT IN</dt><dd>MATLAB game loop + Arduino firmware</dd></div>
+                <div><dt>INPUT</dt><dd>Analog joystick with push switch, in a 3D-printed grip</dd></div>
+                <div><dt>PHYSICS</dt><dd>RK4 integration with quadratic drag (m = 5&nbsp;kg, C<sub>d</sub> = 0.2)</dd></div>
+                <div><dt>LINK</dt><dd>Serial handshake at 115,200 baud, one read per frame</dd></div>
+                <div><dt>TEAM</dt><dd>Group 27: Jake, Indy &amp; Matt</dd></div>
+              </dl>
+              <div>
+                <p class="ss-kicker">SPRITE SHEET</p>
+                <ul class="ss-sprites">
+                  <li><img class="ss-pixel" src="../salmon-slider/img/salmon.png" alt="" width="160" height="160" loading="lazy"><span>Salmon</span></li>
+                  <li><img src="../salmon-slider/img/rock.jpg" alt="" width="192" height="192" loading="lazy"><span>Rock</span></li>
+                  <li><img src="../salmon-slider/img/log.png" alt="" width="384" height="108" loading="lazy"><span>Log</span></li>
+                  <li><img src="../salmon-slider/img/bush.png" alt="" width="256" height="241" loading="lazy"><span>Bush</span></li>
+                </ul>
+              </div>
+            </div>
+            <ul class="ss-gallery">
+              <li><figure><a href="../salmon-slider/img/title-screen.webp" target="_blank" rel="noopener"><img src="../salmon-slider/img/title-screen.webp" alt="Salmon Slider title screen: a pixel-art salmon leaping up a forest river under the game logo" width="1200" height="800" loading="lazy" decoding="async"></a><figcaption>FIG. 4A — Title screen</figcaption></figure></li>
+              <li><figure><a href="../salmon-slider/img/concept-sketch.webp" target="_blank" rel="noopener"><img src="../salmon-slider/img/concept-sketch.webp" alt="Hand-drawn concept sketch of the game screen showing a rock, log and tree falling toward the fish" width="900" height="873" loading="lazy" decoding="async"></a><figcaption>FIG. 4B — First concept sketch</figcaption></figure></li>
+              <li><figure><a href="../salmon-slider/img/controls.webp" target="_blank" rel="noopener"><img src="../salmon-slider/img/controls.webp" alt="Instruction card: move the joystick left and right to navigate, press it down to jump" width="1200" height="800" loading="lazy" decoding="async"></a><figcaption>FIG. 4C — Controls card</figcaption></figure></li>
+              <li class="ss-tall"><figure><a href="../salmon-slider/img/controller.webp" target="_blank" rel="noopener"><img src="../salmon-slider/img/controller.webp" alt="The 3D-printed joystick grip embossed with Salmon Slider, held in a hand" width="900" height="1200" loading="lazy" decoding="async"></a><figcaption>FIG. 4D — 3D-printed joystick grip</figcaption></figure></li>
+            </ul>
+          </div>
         </article>
 
         <article id="prj-005" class="mini-project reveal">
@@ -273,5 +317,6 @@
 
   <script src="background.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="../salmon-slider/ss.js" defer></script>
 </body>
 </html>
